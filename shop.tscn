@@ -50,3 +50,13 @@ offset_right = 1380.0
 offset_bottom = 106.0
 theme_override_font_sizes/font_size = 64
 text = "Clicked: 0"
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 427.0
+offset_top = 404.0
+offset_right = 763.0
+offset_bottom = 511.0
+theme_override_font_sizes/font_size = 40
+text = "A Robot
+(40 Points)"

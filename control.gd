@@ -2,6 +2,8 @@ extends Control
 var config = ConfigFile.new()
 var amount = 0
 var item = 0
+var robot = 0
+var time = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -13,7 +15,9 @@ func _ready() -> void:
 	if save == OK:
 		amount = config.get_value("player", "score")
 		item = config.get_value("player", "golditem")
-    if amount >= 100:
+		robot = config.get_value("player", "robot")
+		
+	if amount >= 100:
 		$Label3.text = "ooo 100"
 	if amount >= 200:
 		$Label3.text = "200 nice"
@@ -21,10 +25,13 @@ func _ready() -> void:
 		$Label3.text = "wow 300"
 	$Label2.text = "Clicked: " + str(amount);
 	
+	
 func _buttonpressed():
 	amount += 1
 	if item == 1:
 		amount += 1
+	if item == 2:
+		amount += 2
 	$Label2.text = "Clicked: " + str(amount);
 	config.set_value("player", "score", amount)
 	config.save("user://clicker.cfg")
@@ -32,9 +39,8 @@ func _buttonpressed():
 		$Label3.text = "ooo 100"
 	if amount == 200:
 		$Label3.text = "200 nice"
-    if amount == 300:
+	if amount == 300:
 		$Label3.text = "wow 300"
-		
 func _button2pressed():
 	get_tree().change_scene_to_file("res://shop.tscn")
 	
