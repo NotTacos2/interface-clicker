@@ -1,5 +1,5 @@
 # interface-clicker
-## A simple interface clicker
+## A simple interface clicker made in godot
 ## TODO:
 - [x] Add a shop
 - [x] Save files
