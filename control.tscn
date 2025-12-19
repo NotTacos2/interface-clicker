@@ -1,0 +1,48 @@
+[gd_scene load_steps=2 format=3 uid="uid://ep1dxeh3dfmb"]
+
+[ext_resource type="Script" uid="uid://blw8ey00p6kfd" path="res://control.gd" id="1_0fbet"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0fbet")
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 783.0
+offset_top = 8.0
+offset_right = 1391.0
+offset_bottom = 104.0
+theme_override_font_sizes/font_size = 64
+text = "Clicked: 0"
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 826.0
+offset_top = 96.0
+offset_right = 1225.0
+offset_bottom = 185.0
+theme_override_font_sizes/font_size = 50
+text = "Keep Going"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 366.0
+offset_top = 260.0
+offset_right = 783.0
+offset_bottom = 447.0
+theme_override_font_sizes/font_size = 64
+text = "Click me!"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 945.0
+offset_top = 553.0
+offset_right = 1153.0
+offset_bottom = 649.0
+theme_override_font_sizes/font_size = 50
+text = "Shop"

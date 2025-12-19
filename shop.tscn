@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqbk3umpu4af8"]
+
+[ext_resource type="Script" uid="uid://d2nwmk5fc1utj" path="res://shop.gd" id="1_viryw"]
+
+[node name="Shop" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_viryw")
+metadata/_edit_vertical_guides_ = [435.0]
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 337.0
+offset_top = 57.0
+offset_right = 847.0
+offset_bottom = 273.0
+theme_override_font_sizes/font_size = 32
+text = "What would you like to buy?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 194.0
+offset_bottom = 85.0
+theme_override_font_sizes/font_size = 36
+text = "Go Back"
