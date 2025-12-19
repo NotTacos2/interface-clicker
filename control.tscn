@@ -47,14 +47,6 @@ offset_bottom = 649.0
 theme_override_font_sizes/font_size = 50
 text = "Shop"
 
-[node name="Button3" type="Button" parent="."]
-layout_mode = 0
-offset_top = 450.0
-offset_right = 217.0
-offset_bottom = 547.0
-theme_override_font_sizes/font_size = 50
-text = "Save"
-
 [node name="Button4" type="Button" parent="."]
 layout_mode = 0
 offset_top = 550.0
