@@ -16,14 +16,27 @@ func _ready() -> void:
 		item = config.get_value("player", "golditem")
 		robot = config.get_value("player", "robot")
 	
+	# if robot == 2:
+		#$Timer.stop()
+		#$Timer.wait_time = 0.5
+		#$Timer.start()
 	$Timer.timeout.connect(_addpointforrobot)
 		
-	if amount >= 100:
-		$Label3.text = "ooo 100"
+	if amount >= 100: # theme_override_colors/font_color # theme_override_colors/font_hover_color
+		$Button.add_theme_color_override("font_color", Color(0.91, 0.90, 0.41, 1))
+		$Button.add_theme_color_override("font_hover_color", Color(0.91, 0.90, 0.41, 1))
+		$Button.add_theme_color_override("font_hover_pressed_color", Color(0.91, 0.90, 0.41, 1))
+		$Button.add_theme_color_override("font_pressed_color", Color(0.91, 0.90, 0.41, 1))
 	if amount >= 200:
-		$Label3.text = "200 nice"
+		$Button.add_theme_color_override("font_color", Color(0.948, 0.264, 0.583, 1.0))
+		$Button.add_theme_color_override("font_hover_color", Color(0.948, 0.264, 0.583, 1.0))
+		$Button.add_theme_color_override("font_hover_pressed_color", Color(0.948, 0.264, 0.583, 1.0))
+		$Button.add_theme_color_override("font_pressed_color", Color(0.948, 0.264, 0.583, 1.0))
 	if amount >= 300:
-		$Label3.text = "wow 300"
+		$Button.add_theme_color_override("font_color", Color(0.394, 0.19, 0.798, 1.0))
+		$Button.add_theme_color_override("font_hover_color", Color(0.394, 0.19, 0.798, 1.0))
+		$Button.add_theme_color_override("font_hover_pressed_color", Color(0.394, 0.19, 0.798, 1.0))
+		$Button.add_theme_color_override("font_pressed_color", Color(0.394, 0.19, 0.798, 1.0))
 	$Label2.text = "Clicked: " + str(amount);
 	
 	
@@ -37,11 +50,23 @@ func _buttonpressed():
 	config.set_value("player", "score", amount)
 	config.save("user://clicker.cfg")
 	if amount >= 100:
-		$Label3.text = "ooo 100"
+		$Button.add_theme_color_override("font_color", Color(0.91, 0.90, 0.41, 1))
+		$Button.add_theme_color_override("font_hover_color", Color(0.91, 0.90, 0.41, 1))
+		$Button.add_theme_color_override("font_focus_color", Color(0.91, 0.90, 0.41, 1))
+		$Button.add_theme_color_override("font_hover_pressed_color", Color(0.91, 0.90, 0.41, 1))
+		$Button.add_theme_color_override("font_pressed_color", Color(0.91, 0.90, 0.41, 1))
 	if amount >= 200:
-		$Label3.text = "200 nice"
+		$Button.add_theme_color_override("font_color", Color(0.948, 0.264, 0.583, 1.0))
+		$Button.add_theme_color_override("font_hover_color", Color(0.948, 0.264, 0.583, 1.0))
+		$Button.add_theme_color_override("font_focus_color", Color(0.948, 0.264, 0.583, 1.0))
+		$Button.add_theme_color_override("font_hover_pressed_color", Color(0.948, 0.264, 0.583, 1.0))
+		$Button.add_theme_color_override("font_pressed_color", Color(0.948, 0.264, 0.583, 1.0))
 	if amount >= 300:
-		$Label3.text = "wow 300"
+		$Button.add_theme_color_override("font_color", Color(0.394, 0.19, 0.798, 1.0))
+		$Button.add_theme_color_override("font_hover_color", Color(0.394, 0.19, 0.798, 1.0))
+		$Button.add_theme_color_override("font_focus_color", Color(0.394, 0.19, 0.798, 1.0))
+		$Button.add_theme_color_override("font_hover_pressed_color", Color(0.394, 0.19, 0.798, 1.0))
+		$Button.add_theme_color_override("font_pressed_color", Color(0.394, 0.19, 0.798, 1.0))
 func _button2pressed():
 	get_tree().change_scene_to_file("res://shop.tscn")
 	

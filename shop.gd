@@ -12,9 +12,13 @@ func _ready() -> void:
 	if save == OK:
 		amount = config.get_value("player", "score")
 		item = config.get_value("player", "golditem")
+		robot = config.get_value("player", "robot")
 	if item == 1:
 		$Button2.text = "Golden Clicker V2
-		                (40 Points)"
+		                 (40 Points)"
+	if robot == 1:
+		$Button3.text = "Upgrade Robot
+		                 (60 Points)"
 	$Button.pressed.connect(_goback)
 	$Button2.pressed.connect(_buygolden)
 	$Button3.pressed.connect(_buyrobot)
@@ -54,14 +58,23 @@ func _buyrobot():
 	if save == OK:
 		amount = config.get_value("player", "score")
 		robot = config.get_value("player", "robot")
-	if robot == 1:
-		$Button3.text = "You already have one"
+	if robot == 2:
+		$Button3.text = "You already have too much"
+		return
+	if robot == 1 && amount < 60:
+		$Button3.text = "You don't have any money to buy this"
 		return
 	if amount < 40:
 		$Button3.text = "You don't have any money to buy this"
 		return
-	newamount = amount - 40
+	if robot == 1:
+		newamount = amount - 60
+	else:
+		newamount = amount - 40
 	config.set_value("player", "score", newamount)
-	config.set_value("player", "robot", 1)
+	if item == 1:
+		config.set_value("player", "robot", 2)
+	else:
+		config.set_value("player", "robot", 1)
 	config.save("user://clicker.cfg")
 	$Label2.text = "Points: " + str(newamount)
