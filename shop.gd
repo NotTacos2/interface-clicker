@@ -4,6 +4,7 @@ var config = ConfigFile.new()
 var amount = 0
 var newamount = 0
 var item = 0
+var robot = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -52,6 +53,10 @@ func _buyrobot():
 	var save = config.load("user://clicker.cfg")
 	if save == OK:
 		amount = config.get_value("player", "score")
+		robot = config.get_value("player", "robot")
+	if robot == 1:
+		$Button3.text = "You already have one"
+		return
 	if amount < 40:
 		$Button3.text = "You don't have any money to buy this"
 		return

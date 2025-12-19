@@ -52,8 +52,13 @@ func _addpointforrobot():
 	var save = config.load("user://clicker.cfg")
 	if save == OK:
 		robot = config.get_value("player", "robot")
+		item = config.get_value("player", "golditem")
 	if robot == 1:
 		amount += 1
+		if item == 1:
+			amount += 1
+		if item == 2:
+			amount += 2
 		config.set_value("player", "score", amount)
 		config.save("user://clicker.cfg")
 		$Label2.text = "Clicked: " + str(amount);
