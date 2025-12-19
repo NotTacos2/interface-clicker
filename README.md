@@ -1,4 +1,5 @@
-# this is basically a simple interface clicker godot game, you can call this whatever you want
+# interface-clicker
+## A simple interface clicker
 ## TODO:
 - [x] Add a shop
 - [x] Save files
