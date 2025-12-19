@@ -26,6 +26,8 @@ func _buttonpressed():
 		$Label3.text = "ooo 100"
 	if amount == 200:
 		$Label3.text = "200 nice"
+    if amount == 300:
+		$Label3.text = "wow 300"
 		
 func _button2pressed():
 	get_tree().change_scene_to_file("res://shop.tscn")
