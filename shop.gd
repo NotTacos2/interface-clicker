@@ -20,6 +20,9 @@ func _buygolden():
 	var save = config.load("user://clicker.cfg")
 	if save == OK:
 		amount = config.get_value("player", "score")
+    if amount < 20:
+		$Button2.text = "You don't have any money to buy this"
+		return
 	newamount = amount - 20
 	config.set_value("player", "score", newamount)
 	config.set_value("player", "golditem", 1)
