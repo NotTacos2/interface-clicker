@@ -13,6 +13,12 @@ func _ready() -> void:
 	if save == OK:
 		amount = config.get_value("player", "score")
 		item = config.get_value("player", "golditem")
+    if amount >= 100:
+		$Label3.text = "ooo 100"
+	if amount >= 200:
+		$Label3.text = "200 nice"
+	if amount >= 300:
+		$Label3.text = "wow 300"
 	$Label2.text = "Clicked: " + str(amount);
 	
 func _buttonpressed():
