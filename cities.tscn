@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwu8s22ug5ugt"]
+
+[ext_resource type="Script" uid="uid://b63jdxmgffjlo" path="res://cities.gd" id="1_q6ia6"]
+[ext_resource type="Texture2D" uid="uid://16ryr1n1bmox" path="res://city.png" id="2_37aek"]
+
+[node name="Cities" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_q6ia6")
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 1.0
+offset_right = 195.0
+offset_bottom = 85.0
+theme_override_font_sizes/font_size = 36
+text = "Go Back"
+
+[node name="city" type="Sprite2D" parent="."]
+position = Vector2(495, 460.00003)
+scale = Vector2(0.49270073, 0.48828125)
+texture = ExtResource("2_37aek")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 188.0
+offset_top = 142.0
+offset_right = 971.0
+offset_bottom = 231.0
+theme_override_font_sizes/font_size = 30
+text = "You don't have any buildings, go to the store and buy one!"
+horizontal_alignment = 1
+vertical_alignment = 1

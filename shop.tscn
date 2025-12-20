@@ -34,9 +34,9 @@ text = "Go Back"
 
 [node name="Button2" type="Button" parent="."]
 layout_mode = 0
-offset_left = 425.0
-offset_top = 274.0
-offset_right = 761.0
+offset_left = 253.0
+offset_top = 271.0
+offset_right = 589.0
 offset_bottom = 377.0
 theme_override_font_sizes/font_size = 35
 text = "Golden Clicker
@@ -53,10 +53,20 @@ text = "Clicked: 0"
 
 [node name="Button3" type="Button" parent="."]
 layout_mode = 0
-offset_left = 427.0
-offset_top = 404.0
-offset_right = 763.0
-offset_bottom = 511.0
+offset_left = 254.0
+offset_top = 402.0
+offset_right = 590.0
+offset_bottom = 520.0
 theme_override_font_sizes/font_size = 40
 text = "A Robot
 (40 Points)"
+
+[node name="Button4" type="Button" parent="."]
+layout_mode = 0
+offset_left = 653.0
+offset_top = 345.0
+offset_right = 919.0
+offset_bottom = 467.0
+theme_override_font_sizes/font_size = 40
+text = "A Building
+(60 Points)"

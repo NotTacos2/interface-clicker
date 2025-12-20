@@ -8,6 +8,7 @@ var robot = 0
 func _ready() -> void:
 	$Button.pressed.connect(_buttonpressed)
 	$Button2.pressed.connect(_button2pressed)
+	$Button3.pressed.connect(_gotocities)
 	$Button4.pressed.connect(_settingsbuttonpressed)
 	print("Initalized!") # idk how to spell
 	var save = config.load("user://clicker.cfg")
@@ -25,19 +26,16 @@ func _ready() -> void:
 	if amount >= 100: # theme_override_colors/font_color # theme_override_colors/font_hover_color
 		$Button.add_theme_color_override("font_color", Color(0.91, 0.90, 0.41, 1))
 		$Button.add_theme_color_override("font_hover_color", Color(0.91, 0.90, 0.41, 1))
-        $Button.add_theme_color_override("font_focus_color", Color(0.91, 0.90, 0.41, 1))
 		$Button.add_theme_color_override("font_hover_pressed_color", Color(0.91, 0.90, 0.41, 1))
 		$Button.add_theme_color_override("font_pressed_color", Color(0.91, 0.90, 0.41, 1))
 	if amount >= 200:
 		$Button.add_theme_color_override("font_color", Color(0.948, 0.264, 0.583, 1.0))
 		$Button.add_theme_color_override("font_hover_color", Color(0.948, 0.264, 0.583, 1.0))
-		$Button.add_theme_color_override("font_focus_color", Color(0.948, 0.264, 0.583, 1.0))
 		$Button.add_theme_color_override("font_hover_pressed_color", Color(0.948, 0.264, 0.583, 1.0))
 		$Button.add_theme_color_override("font_pressed_color", Color(0.948, 0.264, 0.583, 1.0))
 	if amount >= 300:
 		$Button.add_theme_color_override("font_color", Color(0.394, 0.19, 0.798, 1.0))
 		$Button.add_theme_color_override("font_hover_color", Color(0.394, 0.19, 0.798, 1.0))
-		$Button.add_theme_color_override("font_focus_color", Color(0.394, 0.19, 0.798, 1.0))
 		$Button.add_theme_color_override("font_hover_pressed_color", Color(0.394, 0.19, 0.798, 1.0))
 		$Button.add_theme_color_override("font_pressed_color", Color(0.394, 0.19, 0.798, 1.0))
 	$Label2.text = "Clicked: " + str(amount);
@@ -75,6 +73,9 @@ func _button2pressed():
 	
 func _settingsbuttonpressed():
 	get_tree().change_scene_to_file("res://settings.tscn")
+	
+func _gotocities():
+	get_tree().change_scene_to_file("res://cities.tscn")
 	
 func _addpointforrobot():
 	var save = config.load("user://clicker.cfg")

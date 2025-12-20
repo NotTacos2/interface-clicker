@@ -5,6 +5,7 @@ var amount = 0
 var newamount = 0
 var item = 0
 var robot = 0
+var city = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -22,6 +23,7 @@ func _ready() -> void:
 	$Button.pressed.connect(_goback)
 	$Button2.pressed.connect(_buygolden)
 	$Button3.pressed.connect(_buyrobot)
+	$Button4.pressed.connect(_buycity)
 	$Label2.text = "Points: " + str(amount)
 	
 func _goback():
@@ -50,6 +52,25 @@ func _buygolden():
 		config.set_value("player", "golditem", 2)
 	else:
 		config.set_value("player", "golditem", 1)
+	config.save("user://clicker.cfg")
+	$Button2.text = "Golden Clicker V2
+		                 (40 Points)"
+	$Label2.text = "Points: " + str(newamount)
+	
+func _buycity():
+	var save = config.load("user://clicker.cfg")
+	if save == OK:
+		amount = config.get_value("player", "score")
+		city = config.get_value("player", "city")
+	if amount < 60:
+		$Button4.text = "You don't have any money to buy this"
+		return
+	if city == 1:
+		$Button4.text = "You already have this"
+		return
+	newamount = amount - 60
+	config.set_value("player", "score", newamount)
+	config.set_value("player", "city", 1)
 	config.save("user://clicker.cfg")
 	$Label2.text = "Points: " + str(newamount)
 	
