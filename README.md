@@ -3,5 +3,5 @@
 ## TODO:
 - [ ] Add more upgrades
 - [ ] Add more streaks
-- [ ] Managing buildings through shop
-- [ ] Add more buildings and art (sky and ground)
+- [x] Managing buildings through shop (HALF COMPLETED)
+- [ ] Add more buildings and art (ground)
