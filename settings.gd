@@ -15,4 +15,5 @@ func _reset():
 	config.set_value("player", "golditem", 0)
 	config.set_value("player", "robot", 0)
 	config.set_value("player", "city", 0)
+	config.set_value("player", "profit", 0)
 	config.save("user://clicker.cfg")
