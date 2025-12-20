@@ -32,8 +32,14 @@ func _giveprofit():
 	var random_float = randf()
 	if random_float < 0.9:
 		profit += 1
-	else:
+	elif random_float < 0.95:
 		profit -= 2
+	elif random_float < 0.99:
+		profit += 20
+	else:
+		profit = 0
+		if profit == 0:
+			profit -= 10
 	config.set_value("player", "profit", profit)
 	config.save("user://clicker.cfg")
 	$Label2.text = "Buildings profit: " + str(profit);

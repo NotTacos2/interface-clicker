@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cwu8s22ug5ugt"]
+[gd_scene load_steps=4 format=3 uid="uid://cwu8s22ug5ugt"]
 
 [ext_resource type="Script" uid="uid://b63jdxmgffjlo" path="res://cities.gd" id="1_q6ia6"]
 [ext_resource type="Texture2D" uid="uid://16ryr1n1bmox" path="res://city.png" id="2_37aek"]
+[ext_resource type="Texture2D" uid="uid://wxja38d5is1k" path="res://sky.png" id="3_amjoe"]
 
 [node name="Cities" type="Control"]
 layout_mode = 3
@@ -22,8 +23,8 @@ theme_override_font_sizes/font_size = 36
 text = "Go Back"
 
 [node name="city" type="Sprite2D" parent="."]
-position = Vector2(495, 460.00003)
-scale = Vector2(0.49270073, 0.48828125)
+position = Vector2(493, 470.125)
+scale = Vector2(0.49270073, 0.46842447)
 texture = ExtResource("2_37aek")
 
 [node name="Label" type="Label" parent="."]
@@ -32,6 +33,7 @@ offset_left = 188.0
 offset_top = 142.0
 offset_right = 971.0
 offset_bottom = 231.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "You don't have any buildings, go to the store and buy one!"
 horizontal_alignment = 1
@@ -43,6 +45,7 @@ offset_left = 229.0
 offset_top = 78.0
 offset_right = 624.0
 offset_bottom = 147.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 36
 text = "Buildings profit:"
 
@@ -56,4 +59,11 @@ theme_override_font_sizes/font_size = 30
 text = "Collect"
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
 autostart = true
+
+[node name="Sky" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(648.25, 323)
+scale = Vector2(0.8977824, 1)
+texture = ExtResource("3_amjoe")

@@ -10,7 +10,6 @@ func _ready() -> void:
 	$Button2.pressed.connect(_button2pressed)
 	$Button3.pressed.connect(_gotocities)
 	$Button4.pressed.connect(_settingsbuttonpressed)
-	print("Initalized!") # idk how to spell
 	var save = config.load("user://clicker.cfg")
 	if save == OK:
 		amount = config.get_value("player", "score")

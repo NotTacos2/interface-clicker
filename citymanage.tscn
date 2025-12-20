@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjwjdk37vcy3g"]
+
+[ext_resource type="Script" uid="uid://67qxlp74wn0h" path="res://citymanage.gd" id="1_73p4p"]
+
+[node name="Citymanage" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_73p4p")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 3.0
+offset_right = 191.0
+offset_bottom = 87.0
+theme_override_font_sizes/font_size = 36
+text = "Go Back"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 406.0
+offset_top = 307.0
+offset_right = 768.0
+offset_bottom = 429.0
+theme_override_font_sizes/font_size = 48
+text = "Sell Building #1"

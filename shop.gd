@@ -14,16 +14,22 @@ func _ready() -> void:
 		amount = config.get_value("player", "score")
 		item = config.get_value("player", "golditem")
 		robot = config.get_value("player", "robot")
-	if item == 1:
+		city = config.get_value("player", "city")
+	if item >= 1:
 		$Button2.text = "Golden Clicker V2
 		                 (40 Points)"
-	if robot == 1:
+	if robot >= 1:
 		$Button3.text = "Upgrade Robot
 		                 (60 Points)"
+	if city == 1:
+		$Button4.text = "Manage Buildings"
 	$Button.pressed.connect(_goback)
 	$Button2.pressed.connect(_buygolden)
 	$Button3.pressed.connect(_buyrobot)
-	$Button4.pressed.connect(_buycity)
+	if city == 1:
+		$Button4.pressed.connect(_managecity)
+	else:
+		$Button4.pressed.connect(_buycity)
 	$Label2.text = "Points: " + str(amount)
 	
 func _goback():
@@ -73,6 +79,9 @@ func _buycity():
 	config.set_value("player", "city", 1)
 	config.save("user://clicker.cfg")
 	$Label2.text = "Points: " + str(newamount)
+	
+func _managecity():
+	get_tree().change_scene_to_file("res://citymanage.tscn")
 	
 func _buyrobot():
 	var save = config.load("user://clicker.cfg")
