@@ -13,12 +13,12 @@ script = ExtResource("1_x2hje")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 474.0
-offset_top = 307.0
-offset_right = 773.0
-offset_bottom = 395.0
-theme_override_font_sizes/font_size = 24
-text = "Reset? (No going back)"
+offset_left = 465.0
+offset_top = 371.0
+offset_right = 764.0
+offset_bottom = 459.0
+theme_override_font_sizes/font_size = 30
+text = "Reset Save"
 
 [node name="Button2" type="Button" parent="."]
 layout_mode = 0

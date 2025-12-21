@@ -44,7 +44,7 @@ offset_top = 550.0
 offset_right = 217.0
 offset_bottom = 647.0
 theme_override_font_sizes/font_size = 50
-text = "Settings"
+text = "Main Menu"
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
