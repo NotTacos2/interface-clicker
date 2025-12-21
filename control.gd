@@ -1,20 +1,29 @@
 extends Control
 var config = ConfigFile.new()
 var amount = 0
+var totalamount = 0
 var item = 0
 var robot = 0
+var clicked = 0
+var onetime = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$Label.visible = false
 	$Button.pressed.connect(_buttonpressed)
 	$Button2.pressed.connect(_button2pressed)
 	$Button3.pressed.connect(_gotocities)
 	$Button4.pressed.connect(_settingsbuttonpressed)
+	$Button5.pressed.connect(_gotostats)
 	var save = config.load("user://clicker.cfg")
 	if save == OK:
 		amount = config.get_value("player", "score")
 		item = config.get_value("player", "golditem")
 		robot = config.get_value("player", "robot")
+		totalamount = config.get_value("player", "totalscore")
+		clicked = config.get_value("player", "clicked")
+		onetime = config.get_value("player", "onetime")
+		
 		
 	if robot == 1:
 		$Timer.timeout.connect(_addpointforrobot)
@@ -40,14 +49,25 @@ func _ready() -> void:
 	$Label2.text = "Clicked: " + str(amount);
 	
 	
-func _buttonpressed():
+func _buttonpressed():	
 	amount += 1
+	totalamount += 1
+	clicked += 1
 	if item == 1:
 		amount += 1
+		totalamount += 1
 	if item == 2:
 		amount += 2
+		totalamount += 2
 	$Label2.text = "Clicked: " + str(amount);
 	config.set_value("player", "score", amount)
+	config.set_value("player", "totalscore", totalamount)
+	config.set_value("player", "clicked", clicked)
+	if clicked >= 30:
+		if onetime == false: # IDK HOW ELSE TO FIX IT
+			config.set_value("player", "1000achievement", true)
+			config.set_value("player", "onetime", true)
+			$Label.visible = true
 	config.save("user://clicker.cfg")
 	if amount >= 100:
 		$Button.add_theme_color_override("font_color", Color(0.91, 0.90, 0.41, 1))
@@ -76,16 +96,24 @@ func _settingsbuttonpressed():
 	
 func _gotocities():
 	get_tree().change_scene_to_file("res://cities.tscn")
+
+func _gotostats():
+	get_tree().change_scene_to_file("res://stats.tscn")
 	
 func _addpointforrobot():
 	var save = config.load("user://clicker.cfg")
 	if save == OK:
 		item = config.get_value("player", "golditem")
 	amount += 1
+	totalamount += 1
 	if item == 1:
 		amount += 1
+		totalamount += 1
 	if item == 2:
 		amount += 2
+		totalamount += 2
 	config.set_value("player", "score", amount)
+	config.set_value("player", "totalscore", totalamount)
+	config.set_value("player", "clicked", clicked)
 	config.save("user://clicker.cfg")
 	$Label2.text = "Clicked: " + str(amount);

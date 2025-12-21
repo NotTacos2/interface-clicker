@@ -57,3 +57,21 @@ offset_right = 1151.0
 offset_bottom = 551.0
 theme_override_font_sizes/font_size = 52
 text = "City"
+
+[node name="Button5" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 452.0
+offset_right = 207.0
+offset_bottom = 547.0
+theme_override_font_sizes/font_size = 52
+text = "Stats"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 765.0
+offset_top = 93.0
+offset_right = 1146.0
+offset_bottom = 140.0
+theme_override_font_sizes/font_size = 20
+text = "You have unlocked a new achievement."

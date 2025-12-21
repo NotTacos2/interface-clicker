@@ -1,0 +1,66 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfoij0c54g45p"]
+
+[ext_resource type="Script" uid="uid://05qahmflv0w5" path="res://stats.gd" id="1_qkx3n"]
+
+[node name="Stats" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qkx3n")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 3.0
+offset_right = 194.0
+offset_bottom = 87.0
+theme_override_font_sizes/font_size = 36
+text = "Go Back"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 190.0
+offset_top = 150.0
+offset_right = 681.0
+offset_bottom = 206.0
+theme_override_font_sizes/font_size = 40
+text = "Total Clicked:"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 219.0
+offset_right = 689.0
+offset_bottom = 286.0
+theme_override_font_sizes/font_size = 37
+text = "You Clicked:"
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 186.0
+offset_top = 299.0
+offset_right = 994.0
+offset_bottom = 367.0
+theme_override_font_sizes/font_size = 40
+text = "Buildings Profit Earned:"
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 0
+offset_left = 189.0
+offset_top = 363.0
+offset_right = 1016.0
+offset_bottom = 435.0
+theme_override_font_sizes/font_size = 44
+text = "Buildings Profit Lost:"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 875.0
+offset_top = 4.0
+offset_right = 1155.0
+offset_bottom = 90.0
+theme_override_font_sizes/font_size = 40
+text = "Achievements"

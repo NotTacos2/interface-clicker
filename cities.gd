@@ -3,6 +3,8 @@ extends Control
 var config = ConfigFile.new()
 var city = 0
 var profit = 0
+var gain = 0
+var loss = 0
 var amount = 0
 var newamount = 0
 
@@ -16,6 +18,8 @@ func _ready() -> void:
 	if save == OK:
 		city = config.get_value("player", "city")
 		profit = config.get_value("player", "profit")
+		gain = config.get_value("player", "profittotal")
+		loss = config.get_value("player", "profitloss")
 	$Label2.text = "Buildings profit: " + str(profit);
 	if city == 1:
 		$Label.visible = false
@@ -32,15 +36,19 @@ func _giveprofit():
 	var random_float = randf()
 	if random_float < 0.9:
 		profit += 1
+		gain += 1
 	elif random_float < 0.95:
 		profit -= 2
+		loss += 2
 	elif random_float < 0.99:
 		profit += 20
+		gain += 20
 	else:
-		profit = 0
-		if profit == 0:
-			profit -= 10
+		profit -= 50
+		loss += 50
 	config.set_value("player", "profit", profit)
+	config.set_value("player", "profittotal", gain)
+	config.set_value("player", "profitloss", loss)
 	config.save("user://clicker.cfg")
 	$Label2.text = "Buildings profit: " + str(profit);
 	
