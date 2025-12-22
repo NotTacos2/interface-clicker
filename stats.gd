@@ -6,6 +6,8 @@ var clicked = 0
 var gain = 0
 var loss = 0
 var city = 0
+var spent = 0
+var cps = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -17,10 +19,14 @@ func _ready() -> void:
 		clicked = config.get_value("player", "clicked")
 		gain = config.get_value("player", "profittotal")
 		loss = config.get_value("player", "profitloss")
+		spent = config.get_value("player", "totalspent")
 		city = config.get_value("player", "city")
+		cps = config.get_value("player", "cps")
 		
 	$Label.text = "Total Clicked: " + str(total)
 	$Label2.text = "You Clicked: " + str(clicked)
+	$Label5.text = "Total Money Spent: " + str(spent)
+	$Label6.text = "CPS (Clicks Per Second): " + str(cps)
 	$Label3.visible = false
 	$Label4.visible = false
 	if city == 1:

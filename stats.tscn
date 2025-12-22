@@ -40,19 +40,19 @@ text = "You Clicked:"
 
 [node name="Label3" type="Label" parent="."]
 layout_mode = 0
-offset_left = 186.0
-offset_top = 299.0
-offset_right = 994.0
-offset_bottom = 367.0
+offset_left = 183.0
+offset_top = 399.0
+offset_right = 991.0
+offset_bottom = 467.0
 theme_override_font_sizes/font_size = 40
 text = "Buildings Profit Earned:"
 
 [node name="Label4" type="Label" parent="."]
 layout_mode = 0
-offset_left = 189.0
-offset_top = 363.0
-offset_right = 1016.0
-offset_bottom = 435.0
+offset_left = 184.0
+offset_top = 455.0
+offset_right = 1011.0
+offset_bottom = 527.0
 theme_override_font_sizes/font_size = 44
 text = "Buildings Profit Lost:"
 
@@ -64,3 +64,21 @@ offset_right = 1155.0
 offset_bottom = 90.0
 theme_override_font_sizes/font_size = 40
 text = "Achievements"
+
+[node name="Label5" type="Label" parent="."]
+layout_mode = 0
+offset_left = 203.0
+offset_top = 281.0
+offset_right = 921.0
+offset_bottom = 345.0
+theme_override_font_sizes/font_size = 38
+text = "Total Money Spent:"
+
+[node name="Label6" type="Label" parent="."]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 341.0
+offset_right = 1048.0
+offset_bottom = 402.0
+theme_override_font_sizes/font_size = 36
+text = "CPS (Clicks Per Second):"

@@ -5,6 +5,8 @@ var amount = 0
 var item = 0
 var robot = 0
 var city = 0
+var spent = 0
+var stock = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,13 +16,15 @@ func _ready() -> void:
 		item = config.get_value("player", "golditem")
 		robot = config.get_value("player", "robot")
 		city = config.get_value("player", "city")
+		spent = config.get_value("player", "totalspent")
+		stock = config.get_value("player", "stock")
 	if item >= 1:
 		$Button2.text = "Golden Clicker V2
 		                 (40 Clicks)"
 	if robot >= 1:
 		$Button3.text = "Upgrade Robot
 		                 (60 Clicks)"
-	if city >= 1:
+	if city == 1 || stock == 1:
 		$Button4.text = "Manage Buildings"
 	$Button.pressed.connect(_goback)
 	$Button2.pressed.connect(_buygolden)
@@ -50,9 +54,12 @@ func _buygolden():
 		return
 	if item == 1:
 		amount -= 40
+		spent += 40
 	else:
 		amount -= 20
+		spent += 20
 	config.set_value("player", "score", amount)
+	config.set_value("player", "totalspent", spent)
 	if item == 1:
 		config.set_value("player", "golditem", 2)
 	else:
@@ -74,6 +81,8 @@ func _buycity():
 		$Button4.text = "You already have this"
 		return
 	amount -= 60
+	spent += 60
+	config.set_value("player", "totalspent", spent)
 	config.set_value("player", "score", amount)
 	config.set_value("player", "city", 1)
 	config.save("user://clicker.cfg")
@@ -98,9 +107,12 @@ func _buyrobot():
 		return
 	if robot == 1:
 		amount -= 60
+		spent += 60
 	else:
 		amount -= 40
+		spent += 40
 	config.set_value("player", "score", amount)
+	config.set_value("player", "totalspent", spent)
 	if item == 1:
 		config.set_value("player", "robot", 2)
 	else:

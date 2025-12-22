@@ -5,6 +5,7 @@ var totalamount = 0
 var item = 0
 var robot = 0
 var clicked = 0
+var cps = 0
 var onetime = false
 
 # Called when the node enters the scene tree for the first time.
@@ -23,7 +24,6 @@ func _ready() -> void:
 		totalamount = config.get_value("player", "totalscore")
 		clicked = config.get_value("player", "clicked")
 		onetime = config.get_value("player", "onetime")
-		
 		
 	if robot == 1:
 		$Timer.timeout.connect(_addpointforrobot)
@@ -49,20 +49,25 @@ func _ready() -> void:
 	$Label2.text = "Clicked: " + str(amount);
 	
 	
-func _buttonpressed():	
+func _buttonpressed():
 	amount += 1
 	totalamount += 1
 	clicked += 1
+	cps += 1
 	if item == 1:
 		amount += 1
 		totalamount += 1
 	if item == 2:
 		amount += 2
 		totalamount += 2
+	if $Timer2.timeout:
+		cps += 0
+		print("work")
 	$Label2.text = "Clicked: " + str(amount);
 	config.set_value("player", "score", amount)
 	config.set_value("player", "totalscore", totalamount)
 	config.set_value("player", "clicked", clicked)
+	config.set_value("player", "cps", cps)
 	if clicked >= 30:
 		if onetime == false: # IDK HOW ELSE TO FIX IT
 			config.set_value("player", "1000achievement", true)

@@ -6,6 +6,7 @@ var profit = 0
 var gain = 0
 var loss = 0
 var amount = 0
+var stock = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -20,6 +21,7 @@ func _ready() -> void:
 		profit = config.get_value("player", "profit")
 		gain = config.get_value("player", "profittotal")
 		loss = config.get_value("player", "profitloss")
+		stock = config.get_value("player", "stock")
 	$Label2.text = "Buildings profit: " + str(profit);
 	if city == 1:
 		$Label.visible = false
@@ -28,15 +30,20 @@ func _ready() -> void:
 		$Button.visible = true
 		$Button.pressed.connect(_collectmoney)
 		$Timer.timeout.connect(_giveprofit)
+	if stock == 1:
+		$Stock.visible = true
 	
 func _goback():
 	get_tree().change_scene_to_file("res://control.tscn")
 	
 func _giveprofit():
 	var random_float = randf()
-	if random_float < 0.9:
+	if random_float < 0.99:
 		profit += 1
 		gain += 1
+		if stock == 1:
+			profit += 1
+			gain += 1
 	elif random_float < 0.95:
 		profit -= 2
 		loss += 2
