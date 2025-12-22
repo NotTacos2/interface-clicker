@@ -17,6 +17,7 @@ func _reset():
 	config.set_value("player", "city", 0)
 	config.set_value("player", "profit", 0)
 	config.set_value("player", "totalscore", 0)
+	config.set_value("player", "totalspent", 0)
 	config.set_value("player", "clicked", 0)
 	config.set_value("player", "profittotal", 0)
 	config.set_value("player", "profitloss", 0)

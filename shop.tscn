@@ -40,7 +40,7 @@ offset_right = 589.0
 offset_bottom = 377.0
 theme_override_font_sizes/font_size = 35
 text = "Golden Clicker
-(20 Points)"
+(20 Clicks)"
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
@@ -59,7 +59,7 @@ offset_right = 590.0
 offset_bottom = 520.0
 theme_override_font_sizes/font_size = 40
 text = "A Robot
-(40 Points)"
+(40 Clicks)"
 
 [node name="Button4" type="Button" parent="."]
 layout_mode = 0
@@ -69,4 +69,4 @@ offset_right = 919.0
 offset_bottom = 467.0
 theme_override_font_sizes/font_size = 40
 text = "A Building
-(60 Points)"
+(60 Clicks)"

@@ -6,7 +6,6 @@ var profit = 0
 var gain = 0
 var loss = 0
 var amount = 0
-var newamount = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,6 +13,7 @@ func _ready() -> void:
 	$city.visible = false
 	$Label2.visible = false
 	$Button.visible = false
+	$Stock.visible = false
 	var save = config.load("user://clicker.cfg")
 	if save == OK:
 		city = config.get_value("player", "city")
@@ -59,8 +59,8 @@ func _collectmoney():
 		profit = config.get_value("player", "profit")
 		
 	if city == 1:
-		newamount = amount + profit
-		config.set_value("player", "score", newamount)
+		amount += profit
+		config.set_value("player", "score", amount)
 		profit = 0
 		config.set_value("player", "profit", profit)
 	config.save("user://clicker.cfg")

@@ -2,7 +2,6 @@ extends Control
 
 var config = ConfigFile.new()
 var amount = 0
-var newamount = 0
 var item = 0
 var robot = 0
 var city = 0
@@ -17,20 +16,20 @@ func _ready() -> void:
 		city = config.get_value("player", "city")
 	if item >= 1:
 		$Button2.text = "Golden Clicker V2
-		                 (40 Points)"
+		                 (40 Clicks)"
 	if robot >= 1:
 		$Button3.text = "Upgrade Robot
-		                 (60 Points)"
-	if city == 1:
+		                 (60 Clicks)"
+	if city >= 1:
 		$Button4.text = "Manage Buildings"
 	$Button.pressed.connect(_goback)
 	$Button2.pressed.connect(_buygolden)
 	$Button3.pressed.connect(_buyrobot)
-	if city == 1:
+	if city >= 1:
 		$Button4.pressed.connect(_managecity)
 	else:
 		$Button4.pressed.connect(_buycity)
-	$Label2.text = "Points: " + str(amount)
+	$Label2.text = "Clicked: " + str(amount)
 	
 func _goback():
 	get_tree().change_scene_to_file("res://control.tscn")
@@ -50,18 +49,18 @@ func _buygolden():
 		$Button2.text = "You don't have any money to buy this"
 		return
 	if item == 1:
-		newamount = amount - 40
+		amount -= 40
 	else:
-		newamount = amount - 20
-	config.set_value("player", "score", newamount)
+		amount -= 20
+	config.set_value("player", "score", amount)
 	if item == 1:
 		config.set_value("player", "golditem", 2)
 	else:
 		config.set_value("player", "golditem", 1)
 	config.save("user://clicker.cfg")
 	$Button2.text = "Golden Clicker V2
-		                 (40 Points)"
-	$Label2.text = "Points: " + str(newamount)
+		                 (40 Clicks)"
+	$Label2.text = "Clicked: " + str(amount)
 	
 func _buycity():
 	var save = config.load("user://clicker.cfg")
@@ -74,11 +73,11 @@ func _buycity():
 	if city == 1:
 		$Button4.text = "You already have this"
 		return
-	newamount = amount - 60
-	config.set_value("player", "score", newamount)
+	amount -= 60
+	config.set_value("player", "score", amount)
 	config.set_value("player", "city", 1)
 	config.save("user://clicker.cfg")
-	$Label2.text = "Points: " + str(newamount)
+	$Label2.text = "Clicked: " + str(amount)
 	
 func _managecity():
 	get_tree().change_scene_to_file("res://citymanage.tscn")
@@ -98,13 +97,13 @@ func _buyrobot():
 		$Button3.text = "You don't have any money to buy this"
 		return
 	if robot == 1:
-		newamount = amount - 60
+		amount -= 60
 	else:
-		newamount = amount - 40
-	config.set_value("player", "score", newamount)
+		amount -= 40
+	config.set_value("player", "score", amount)
 	if item == 1:
 		config.set_value("player", "robot", 2)
 	else:
 		config.set_value("player", "robot", 1)
 	config.save("user://clicker.cfg")
-	$Label2.text = "Points: " + str(newamount)
+	$Label2.text = "Clicked: " + str(amount)

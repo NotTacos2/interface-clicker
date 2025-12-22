@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cwu8s22ug5ugt"]
+[gd_scene load_steps=6 format=3 uid="uid://cwu8s22ug5ugt"]
 
 [ext_resource type="Script" uid="uid://b63jdxmgffjlo" path="res://cities.gd" id="1_q6ia6"]
 [ext_resource type="Texture2D" uid="uid://16ryr1n1bmox" path="res://city.png" id="2_37aek"]
 [ext_resource type="Texture2D" uid="uid://wxja38d5is1k" path="res://sky.png" id="3_amjoe"]
 [ext_resource type="Texture2D" uid="uid://bfskx4e78cuwb" path="res://cityroad.png" id="4_21cra"]
+[ext_resource type="Texture2D" uid="uid://briyewgi5k42c" path="res://stock.png" id="5_63qm5"]
 
 [node name="Cities" type="Control"]
 layout_mode = 3
@@ -71,6 +72,11 @@ scale = Vector2(0.8977824, 1)
 texture = ExtResource("3_amjoe")
 
 [node name="Cityroad" type="Sprite2D" parent="."]
-position = Vector2(578, 198.00002)
-scale = Vector2(0.7176562, 0.5637499)
+position = Vector2(571.5625, 198.00002)
+scale = Vector2(0.72570306, 0.5637499)
 texture = ExtResource("4_21cra")
+
+[node name="Stock" type="Sprite2D" parent="."]
+position = Vector2(701, 409.625)
+scale = Vector2(0.3440246, 0.32248974)
+texture = ExtResource("5_63qm5")
