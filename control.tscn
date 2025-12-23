@@ -78,3 +78,24 @@ text = "You have unlocked a new achievement."
 
 [node name="Timer2" type="Timer" parent="."]
 autostart = true
+
+[node name="Button6" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 354.0
+offset_right = 207.0
+offset_bottom = 449.0
+theme_override_font_sizes/font_size = 50
+text = "Rebirth"
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 11.0
+offset_right = 588.0
+offset_bottom = 70.0
+theme_override_font_sizes/font_size = 20
+text = "Congrats, you have now been rebirthed!
+Your money and items has been reset except for your stats."
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -6,11 +6,14 @@ var item = 0
 var robot = 0
 var clicked = 0
 var cps = 0
+var rebirth = 0
 var onetime = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$Label.visible = false
+	$Label3.visible = false
+	$Button6.visible = false
 	$Button.pressed.connect(_buttonpressed)
 	$Button2.pressed.connect(_button2pressed)
 	$Button3.pressed.connect(_gotocities)
@@ -24,9 +27,18 @@ func _ready() -> void:
 		totalamount = config.get_value("player", "totalscore")
 		clicked = config.get_value("player", "clicked")
 		onetime = config.get_value("player", "onetime")
+		rebirth = config.get_value("player", "rebirth")
 		
 	if robot == 1:
 		$Timer.timeout.connect(_addpointforrobot)
+		
+	if item == 1 && rebirth == 0:
+		$Button6.visible = true
+		$Button6.pressed.connect(_rebirth)
+		
+	if item == 1 && rebirth == 1:
+		$Button6.visible = true
+		$Button6.pressed.connect(_rebirth)
 		
 	if amount >= 100: # theme_override_colors/font_color # theme_override_colors/font_hover_color
 		$Button.add_theme_color_override("font_color", Color(0.91, 0.90, 0.41, 1))
@@ -68,7 +80,7 @@ func _buttonpressed():
 	config.set_value("player", "totalscore", totalamount)
 	config.set_value("player", "clicked", clicked)
 	config.set_value("player", "cps", cps)
-	if clicked >= 30:
+	if clicked >= 1000:
 		if onetime == false: # IDK HOW ELSE TO FIX IT
 			config.set_value("player", "1000achievement", true)
 			config.set_value("player", "onetime", true)
@@ -122,3 +134,23 @@ func _addpointforrobot():
 	config.set_value("player", "clicked", clicked)
 	config.save("user://clicker.cfg")
 	$Label2.text = "Clicked: " + str(amount);
+	
+func _rebirth():
+	var save = config.load("user://clicker.cfg")
+	if save == OK:
+		rebirth = config.get_value("player", "rebirth")
+	rebirth += 1
+	amount = 0
+	item = 0
+	robot = 0
+	config.set_value("player", "score", 0)
+	config.set_value("player", "golditem", 0)
+	config.set_value("player", "robot", 0)
+	config.set_value("player", "city", 0)
+	config.set_value("player", "profit", 0)
+	config.set_value("player", "stock", 0)
+	config.set_value("player", "rebirth", rebirth)
+	config.save("user://clicker.cfg")
+	$Label.visible = true
+	$Label3.visible = true
+	$Button6.visible = false

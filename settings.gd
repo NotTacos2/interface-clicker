@@ -18,6 +18,7 @@ func _reset():
 	config.set_value("player", "profit", 0)
 	config.set_value("player", "totalscore", 0)
 	config.set_value("player", "totalspent", 0)
+	config.set_value("player", "rebirth", 0)
 	config.set_value("player", "cps", 0)
 	config.set_value("player", "stock", 0)
 	config.set_value("player", "clicked", 0)

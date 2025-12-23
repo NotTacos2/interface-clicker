@@ -27,6 +27,7 @@ func _ready() -> void:
 	$Label2.text = "You Clicked: " + str(clicked)
 	$Label5.text = "Total Money Spent: " + str(spent)
 	$Label6.text = "CPS (Clicks Per Second): " + str(cps)
+	$Label6.visible = false
 	$Label3.visible = false
 	$Label4.visible = false
 	if city == 1:

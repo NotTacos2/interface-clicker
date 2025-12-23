@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://djne8h6f3m5s"]
+[gd_scene load_steps=6 format=3 uid="uid://djne8h6f3m5s"]
 
 [ext_resource type="Script" uid="uid://bp2ja6430w28v" path="res://achievements.gd" id="1_nr1wc"]
 [ext_resource type="Texture2D" uid="uid://cfqnr4phqg3l3" path="res://achievement.png" id="2_e00ml"]
 [ext_resource type="Texture2D" uid="uid://tdm6rqgyhh2r" path="res://achievement1.png" id="3_bnact"]
+[ext_resource type="Texture2D" uid="uid://drjw4csi1obab" path="res://achievement2.png" id="4_u4g45"]
+[ext_resource type="Texture2D" uid="uid://d35h7kdju7fot" path="res://achievement3.png" id="5_h64ow"]
 
 [node name="Achievements" type="Control"]
 layout_mode = 3
@@ -38,6 +40,25 @@ offset_bottom = 282.0
 theme_override_font_sizes/font_size = 29
 text = "Unlock this when you reach a certain amount of mouse clicks"
 
+[node name="Label4" type="Label" parent="."]
+layout_mode = 0
+offset_left = 183.0
+offset_top = 311.0
+offset_right = 362.0
+offset_bottom = 394.0
+theme_override_font_sizes/font_size = 60
+text = "???"
+
+[node name="Achievement4" type="Sprite2D" parent="."]
+position = Vector2(102.00001, 555)
+scale = Vector2(0.5999999, 0.609887)
+texture = ExtResource("2_e00ml")
+
+[node name="Achievement3" type="Sprite2D" parent="."]
+position = Vector2(99, 382.00003)
+scale = Vector2(0.58161247, 0.598939)
+texture = ExtResource("2_e00ml")
+
 [node name="Achievement" type="Sprite2D" parent="."]
 position = Vector2(96.00001, 209)
 scale = Vector2(0.635, 0.65250003)
@@ -47,3 +68,40 @@ texture = ExtResource("2_e00ml")
 position = Vector2(96.375, 208.3125)
 scale = Vector2(0.63625, 0.666875)
 texture = ExtResource("3_bnact")
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 183.0
+offset_top = 403.0
+offset_right = 1039.0
+offset_bottom = 464.0
+theme_override_font_sizes/font_size = 29
+text = "Unlock this when you rebirth once"
+
+[node name="Label5" type="Label" parent="."]
+layout_mode = 0
+offset_left = 185.0
+offset_top = 480.0
+offset_right = 361.0
+offset_bottom = 563.0
+theme_override_font_sizes/font_size = 59
+text = "???"
+
+[node name="Label6" type="Label" parent="."]
+layout_mode = 0
+offset_left = 185.0
+offset_top = 573.0
+offset_right = 1041.0
+offset_bottom = 634.0
+theme_override_font_sizes/font_size = 29
+text = "Unlock this when you rebirth twice"
+
+[node name="Achievement2" type="Sprite2D" parent="."]
+position = Vector2(98, 382.1875)
+scale = Vector2(0.64, 0.69812495)
+texture = ExtResource("4_u4g45")
+
+[node name="Achievement5" type="Sprite2D" parent="."]
+position = Vector2(100.5625, 551.75)
+scale = Vector2(0.63437504, 0.65250003)
+texture = ExtResource("5_h64ow")
