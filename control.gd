@@ -5,8 +5,9 @@ var totalamount = 0
 var item = 0
 var robot = 0
 var clicked = 0
-var cps = 0
 var rebirth = 0
+var city = 0
+var stock = 0
 var onetime = false
 
 # Called when the node enters the scene tree for the first time.
@@ -28,15 +29,17 @@ func _ready() -> void:
 		clicked = config.get_value("player", "clicked")
 		onetime = config.get_value("player", "onetime")
 		rebirth = config.get_value("player", "rebirth")
+		city = config.get_value("player", "city")
+		stock = config.get_value("player", "stock")
 		
-	if robot == 1:
+	if robot >= 1:
 		$Timer.timeout.connect(_addpointforrobot)
 		
-	if item == 1 && rebirth == 0:
+	if item >= 2 && rebirth == 0:
 		$Button6.visible = true
 		$Button6.pressed.connect(_rebirth)
 		
-	if item == 1 && rebirth == 1:
+	if item >= 2 && rebirth == 1:
 		$Button6.visible = true
 		$Button6.pressed.connect(_rebirth)
 		
@@ -62,24 +65,19 @@ func _ready() -> void:
 	
 	
 func _buttonpressed():
-	amount += 1
-	totalamount += 1
+	amount += 1 + (0.5 * rebirth)
+	totalamount += 1 + (0.5 * rebirth)
 	clicked += 1
-	cps += 1
 	if item == 1:
-		amount += 1
+		amount += 1 + (0.5 * rebirth)
 		totalamount += 1
 	if item == 2:
-		amount += 2
+		amount += 2 + (0.5 * rebirth)
 		totalamount += 2
-	if $Timer2.timeout:
-		cps += 0
-		print("work")
 	$Label2.text = "Clicked: " + str(amount);
 	config.set_value("player", "score", amount)
 	config.set_value("player", "totalscore", totalamount)
 	config.set_value("player", "clicked", clicked)
-	config.set_value("player", "cps", cps)
 	if clicked >= 1000:
 		if onetime == false: # IDK HOW ELSE TO FIX IT
 			config.set_value("player", "1000achievement", true)
@@ -121,13 +119,13 @@ func _addpointforrobot():
 	var save = config.load("user://clicker.cfg")
 	if save == OK:
 		item = config.get_value("player", "golditem")
-	amount += 1
-	totalamount += 1
+	amount += 1 + (robot * 0.5) + (0.5 * rebirth)
+	totalamount += 1 + (robot * 0.5) + (0.5 * rebirth)
 	if item == 1:
-		amount += 1
+		amount += 1 + (robot * 0.5) + (0.5 * rebirth)
 		totalamount += 1
 	if item == 2:
-		amount += 2
+		amount += 2 + (robot * 0.5) + (0.5 * rebirth)
 		totalamount += 2
 	config.set_value("player", "score", amount)
 	config.set_value("player", "totalscore", totalamount)

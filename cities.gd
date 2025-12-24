@@ -14,6 +14,7 @@ func _ready() -> void:
 	$city.visible = false
 	$Label2.visible = false
 	$Button.visible = false
+	$Button3.visible = false
 	$Stock.visible = false
 	var save = config.load("user://clicker.cfg")
 	if save == OK:
@@ -23,7 +24,7 @@ func _ready() -> void:
 		loss = config.get_value("player", "profitloss")
 		stock = config.get_value("player", "stock")
 	$Label2.text = "Buildings profit: " + str(profit);
-	if city == 1:
+	if city == 1 || stock == 1:
 		$Label.visible = false
 		$city.visible = true
 		$Label2.visible = true
@@ -32,6 +33,7 @@ func _ready() -> void:
 		$Timer.timeout.connect(_giveprofit)
 	if stock == 1:
 		$Stock.visible = true
+		$Button3.visible = true
 	
 func _goback():
 	get_tree().change_scene_to_file("res://control.tscn")
@@ -39,20 +41,20 @@ func _goback():
 func _giveprofit():
 	var random_float = randf()
 	if random_float < 0.99:
-		profit += 1
-		gain += 1
+		profit += 1 + (1 * stock)
+		gain += 1 + (1 * stock)
 		if stock == 1:
-			profit += 1
-			gain += 1
+			profit += 1 + (1 * stock)
+			gain += 1 + (1 * stock)
 	elif random_float < 0.95:
-		profit -= 2
-		loss += 2
+		profit -= 2 + (1 * stock)
+		loss += 2 + (1 * stock)
 	elif random_float < 0.99:
-		profit += 20
-		gain += 20
+		profit += 20 + (1 * stock)
+		gain += 20 + (1 * stock)
 	else:
-		profit -= 50
-		loss += 50
+		profit -= 50 + (1 * stock)
+		loss += 50 + (1 * stock)
 	config.set_value("player", "profit", profit)
 	config.set_value("player", "profittotal", gain)
 	config.set_value("player", "profitloss", loss)

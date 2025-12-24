@@ -13,7 +13,7 @@ script = ExtResource("1_0fbet")
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
-offset_left = 783.0
+offset_left = 657.0
 offset_top = 8.0
 offset_right = 1391.0
 offset_bottom = 104.0
@@ -69,14 +69,15 @@ text = "Stats"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 765.0
+offset_left = 628.0
 offset_top = 93.0
-offset_right = 1146.0
+offset_right = 1009.0
 offset_bottom = 140.0
 theme_override_font_sizes/font_size = 20
 text = "You have unlocked a new achievement."
 
 [node name="Timer2" type="Timer" parent="."]
+wait_time = 0.5
 autostart = true
 
 [node name="Button6" type="Button" parent="."]

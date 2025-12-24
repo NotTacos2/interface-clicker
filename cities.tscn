@@ -80,3 +80,12 @@ texture = ExtResource("4_21cra")
 position = Vector2(701, 409.625)
 scale = Vector2(0.3440246, 0.32248974)
 texture = ExtResource("5_63qm5")
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 609.0
+offset_top = 209.0
+offset_right = 794.0
+offset_bottom = 253.0
+theme_override_font_sizes/font_size = 23
+text = "Manage Stocks"

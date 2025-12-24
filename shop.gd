@@ -22,7 +22,7 @@ func _ready() -> void:
 		$Button2.text = "Golden Clicker V2
 		                 (40 Clicks)"
 	if robot >= 1:
-		$Button3.text = "Upgrade Robot
+		$Button3.text = "Another Robot
 		                 (60 Clicks)"
 	if city == 1 || stock == 1:
 		$Button4.text = "Manage Buildings"
