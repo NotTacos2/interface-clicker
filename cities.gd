@@ -7,6 +7,7 @@ var gain = 0
 var loss = 0
 var amount = 0
 var stock = 0
+var casino = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -16,6 +17,7 @@ func _ready() -> void:
 	$Button.visible = false
 	$Button3.visible = false
 	$Stock.visible = false
+	$Button4.visible = false
 	var save = config.load("user://clicker.cfg")
 	if save == OK:
 		city = config.get_value("player", "city")
@@ -23,8 +25,9 @@ func _ready() -> void:
 		gain = config.get_value("player", "profittotal")
 		loss = config.get_value("player", "profitloss")
 		stock = config.get_value("player", "stock")
+		casino = config.get_value("player", "casino")
 	$Label2.text = "Buildings profit: " + str(profit);
-	if city == 1 || stock == 1:
+	if city == 1 || stock == 1 || casino == 1:
 		$Label.visible = false
 		$city.visible = true
 		$Label2.visible = true
@@ -34,27 +37,35 @@ func _ready() -> void:
 	if stock == 1:
 		$Stock.visible = true
 		$Button3.visible = true
+		$Button3.pressed.connect(_gostocks)
+	
+	if casino == 1:
+		$Button4.visible = true
+		$Button4.pressed.connect(_gocasino)
 	
 func _goback():
 	get_tree().change_scene_to_file("res://control.tscn")
 	
+func _gostocks():
+	get_tree().change_scene_to_file("res://stocks.tscn")
+	
+func _gocasino():
+	get_tree().change_scene_to_file("res://casino.tscn")
+	
 func _giveprofit():
 	var random_float = randf()
 	if random_float < 0.99:
-		profit += 1 + (1 * stock)
-		gain += 1 + (1 * stock)
-		if stock == 1:
-			profit += 1 + (1 * stock)
-			gain += 1 + (1 * stock)
+		profit += 1 + (1 * stock) + (1 * casino)
+		gain += 1 + (1 * stock) + (1 * casino)
 	elif random_float < 0.95:
-		profit -= 2 + (1 * stock)
-		loss += 2 + (1 * stock)
+		profit -= 2 + (1 * stock) + (1 * casino)
+		loss += 2 + (1 * stock) + (1 * casino)
 	elif random_float < 0.99:
-		profit += 20 + (1 * stock)
-		gain += 20 + (1 * stock)
+		profit += 20 + (1 * stock) + (1 * casino)
+		gain += 20 + (1 * stock) + (1 * casino)
 	else:
-		profit -= 50 + (1 * stock)
-		loss += 50 + (1 * stock)
+		profit -= 50 + (1 * stock) + (1 * casino)
+		loss += 50 + (1 * stock) + (1 * casino)
 	config.set_value("player", "profit", profit)
 	config.set_value("player", "profittotal", gain)
 	config.set_value("player", "profitloss", loss)

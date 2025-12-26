@@ -91,3 +91,48 @@ offset_right = 638.0
 offset_bottom = 400.0
 theme_override_font_sizes/font_size = 45
 text = "Rebirths: "
+
+[node name="Label8" type="Label" parent="."]
+layout_mode = 0
+offset_left = 187.0
+offset_top = 87.0
+offset_right = 612.0
+offset_bottom = 170.0
+theme_override_font_sizes/font_size = 42
+text = "Completion: "
+
+[node name="Label9" type="Label" parent="."]
+layout_mode = 0
+offset_left = 693.0
+offset_top = 100.0
+offset_right = 1149.0
+offset_bottom = 152.0
+theme_override_font_sizes/font_size = 32
+text = "Stock Profit Earned:"
+
+[node name="Label10" type="Label" parent="."]
+layout_mode = 0
+offset_left = 696.0
+offset_top = 149.0
+offset_right = 1155.0
+offset_bottom = 201.0
+theme_override_font_sizes/font_size = 32
+text = "Stock Profit Lost:"
+
+[node name="Label11" type="Label" parent="."]
+layout_mode = 0
+offset_left = 694.0
+offset_top = 211.0
+offset_right = 1153.0
+offset_bottom = 277.0
+theme_override_font_sizes/font_size = 32
+text = "Casino Profit Earned: "
+
+[node name="Label12" type="Label" parent="."]
+layout_mode = 0
+offset_left = 692.0
+offset_top = 260.0
+offset_right = 1151.0
+offset_bottom = 326.0
+theme_override_font_sizes/font_size = 32
+text = "Casino Profit Lost: "

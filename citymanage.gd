@@ -6,6 +6,7 @@ var amount = 0
 var spent = 0
 var stock = 0
 var sold = 0
+var casino = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -16,6 +17,7 @@ func _ready() -> void:
 		spent = config.get_value("player", "totalspent")
 		stock = config.get_value("player", "stock")
 		sold = config.get_value("player", "sold")
+		casino = config.get_value("player", "casino")
 		
 	$Label2.text = "Clicked: " + str(amount)
 	$Button.pressed.connect(_goback)
@@ -25,10 +27,20 @@ func _ready() -> void:
 		$Button3.visible = true
 		$Button3.pressed.connect(_buystock)
 		
+	if city == 1 || stock == 1:
+		if casino == 0:
+			$Button4.visible = true
+			$Button4.pressed.connect(_buycasino)
+		
 	if stock == 1:
 		$Button3.visible = true
 		$Button3.text = "Sell Stock Building #2"
 		$Button3.pressed.connect(_sellstock)
+		
+	if casino == 1:
+		$Button4.visible = true
+		$Button4.text = "Sell Casino Building #3"
+		$Button4.pressed.connect(_sellcasino)
 
 func _goback():
 	get_tree().change_scene_to_file("res://shop.tscn")
@@ -64,3 +76,22 @@ func _sellstock():
 	config.set_value("player", "sold", sold)
 	config.save("user://clicker.cfg")
 	$Label2.text = "Clicked: " + str(amount)
+	
+func _buycasino():
+	if amount < 200:
+		return
+	amount -= 200
+	casino += 1
+	config.set_value("player", "score", amount)
+	config.set_value("player", "casino", casino)
+	config.save("user://clicker.cfg")
+	$Label2.text = "Clicked: " + str(amount)
+	
+func _sellcasino():
+	amount += 200
+	sold += 1
+	config.set_value("player", "score", amount)
+	config.set_value("player", "casino", 0)
+	config.set_value("player", "sold", sold)
+	config.save("user://clicker.cfg")
+	$Label2.text = "Clicked" + str(amount)

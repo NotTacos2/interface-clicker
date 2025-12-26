@@ -7,6 +7,7 @@ var robot = 0
 var clicked = 0
 var rebirth = 0
 var city = 0
+var complete = 0
 var stock = 0
 var onetime = false
 
@@ -31,17 +32,18 @@ func _ready() -> void:
 		rebirth = config.get_value("player", "rebirth")
 		city = config.get_value("player", "city")
 		stock = config.get_value("player", "stock")
+		complete = config.get_value("player", "complete")
 		
 	if robot >= 1:
 		$Timer.timeout.connect(_addpointforrobot)
 		
-	if item >= 2 && rebirth == 0:
+	if item >= 2 && rebirth < 10:
 		$Button6.visible = true
 		$Button6.pressed.connect(_rebirth)
 		
-	if item >= 2 && rebirth == 1:
-		$Button6.visible = true
-		$Button6.pressed.connect(_rebirth)
+	if complete == 100:
+		$Label3.visible = true
+		$Label3.text = "You have completed the game, great job!"
 		
 	if amount >= 100: # theme_override_colors/font_color # theme_override_colors/font_hover_color
 		$Button.add_theme_color_override("font_color", Color(0.91, 0.90, 0.41, 1))
@@ -61,6 +63,18 @@ func _ready() -> void:
 		$Button.add_theme_color_override("font_focus_color", Color(0.394, 0.19, 0.798, 1.0))
 		$Button.add_theme_color_override("font_hover_pressed_color", Color(0.394, 0.19, 0.798, 1.0))
 		$Button.add_theme_color_override("font_pressed_color", Color(0.394, 0.19, 0.798, 1.0))
+	if amount >= 500:
+		$Button.add_theme_color_override("font_color", Color(23.237, 0.0, 0.0, 1.0))
+		$Button.add_theme_color_override("font_hover_color", Color(23.237, 0.0, 0.0, 1.0))
+		$Button.add_theme_color_override("font_focus_color", Color(23.237, 0.0, 0.0, 1.0))
+		$Button.add_theme_color_override("font_hover_pressed_color", Color(23.237, 0.0, 0.0, 1.0))
+		$Button.add_theme_color_override("font_pressed_color", Color(23.237, 0.0, 0.0, 1.0))
+	if amount >= 1000:
+		$Button.add_theme_color_override("font_color", Color(206, 206, 0, 1.0))
+		$Button.add_theme_color_override("font_hover_color", Color(206, 206, 0, 1.0))
+		$Button.add_theme_color_override("font_focus_color", Color(206, 206, 0, 1.0))
+		$Button.add_theme_color_override("font_hover_pressed_color", Color(206, 206, 0, 1.0))
+		$Button.add_theme_color_override("font_pressed_color", Color(206, 206, 0, 1.0))
 	$Label2.text = "Clicked: " + str(amount);
 	
 	
@@ -102,6 +116,18 @@ func _buttonpressed():
 		$Button.add_theme_color_override("font_focus_color", Color(0.394, 0.19, 0.798, 1.0))
 		$Button.add_theme_color_override("font_hover_pressed_color", Color(0.394, 0.19, 0.798, 1.0))
 		$Button.add_theme_color_override("font_pressed_color", Color(0.394, 0.19, 0.798, 1.0))
+	if amount >= 500:
+		$Button.add_theme_color_override("font_color", Color(23.237, 0.0, 0.0, 1.0))
+		$Button.add_theme_color_override("font_hover_color", Color(23.237, 0.0, 0.0, 1.0))
+		$Button.add_theme_color_override("font_focus_color", Color(23.237, 0.0, 0.0, 1.0))
+		$Button.add_theme_color_override("font_hover_pressed_color", Color(23.237, 0.0, 0.0, 1.0))
+		$Button.add_theme_color_override("font_pressed_color", Color(23.237, 0.0, 0.0, 1.0))
+	if amount >= 1000:
+		$Button.add_theme_color_override("font_color", Color(206, 206, 0, 1.0))
+		$Button.add_theme_color_override("font_hover_color", Color(206, 206, 0, 1.0))
+		$Button.add_theme_color_override("font_focus_color", Color(206, 206, 0, 1.0))
+		$Button.add_theme_color_override("font_hover_pressed_color", Color(206, 206, 0, 1.0))
+		$Button.add_theme_color_override("font_pressed_color", Color(206, 206, 0, 1.0))
 		
 func _button2pressed():
 	get_tree().change_scene_to_file("res://shop.tscn")
@@ -137,7 +163,9 @@ func _rebirth():
 	var save = config.load("user://clicker.cfg")
 	if save == OK:
 		rebirth = config.get_value("player", "rebirth")
+		complete = config.get_value("player", "complete")
 	rebirth += 1
+	complete += 10
 	amount = 0
 	item = 0
 	robot = 0
@@ -148,7 +176,10 @@ func _rebirth():
 	config.set_value("player", "profit", 0)
 	config.set_value("player", "stock", 0)
 	config.set_value("player", "rebirth", rebirth)
+	config.set_value("player", "complete", complete)
 	config.save("user://clicker.cfg")
 	$Label.visible = true
 	$Label3.visible = true
 	$Button6.visible = false
+	if complete == 100:
+		$Label3.text = "You have now completed the game, great job!"
