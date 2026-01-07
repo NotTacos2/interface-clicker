@@ -22,13 +22,13 @@ func _ready() -> void:
 		$Achievement1.visible = true
 		
 	if rebirth >= 1:
-		$Label4.text = "Rebirthed!"
+		$Label5.text = "Rebirthed!"
 		$Label3.text = "You have been rebirthed once!"
 		$Achievement3.visible = false
 		$Achievement2.visible = true
 		
-	if rebirth == 2:
-		$Label5.text = "Rebirthed again!"
+	if rebirth >= 2:
+		$Label4.text = "Rebirthed again!"
 		$Label6.text = "You have been rebirthed... again!"
 		$Achievement4.visible = false
 		$Achievement5.visible = true

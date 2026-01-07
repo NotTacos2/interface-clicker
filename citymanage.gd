@@ -82,7 +82,9 @@ func _buycasino():
 		return
 	amount -= 200
 	casino += 1
+	spent += 200
 	config.set_value("player", "score", amount)
+	config.set_value("player", "totalspent", spent)
 	config.set_value("player", "casino", casino)
 	config.save("user://clicker.cfg")
 	$Label2.text = "Clicked: " + str(amount)

@@ -11,6 +11,7 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = 129.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_nr1wc")
@@ -24,84 +25,84 @@ text = "Go Back"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 180.0
-offset_top = 132.0
-offset_right = 359.0
-offset_bottom = 215.0
+offset_left = 176.0
+offset_top = 138.0
+offset_right = 1183.0
+offset_bottom = 221.0
 theme_override_font_sizes/font_size = 60
 text = "???"
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
-offset_left = 184.0
-offset_top = 221.0
-offset_right = 938.0
-offset_bottom = 282.0
+offset_left = 181.0
+offset_top = 226.0
+offset_right = 1188.0
+offset_bottom = 266.0
 theme_override_font_sizes/font_size = 29
 text = "Unlock this when you reach a certain amount of mouse clicks"
 
+[node name="Achievement4" type="Sprite2D" parent="."]
+position = Vector2(89, 520)
+scale = Vector2(0.68499994, 0.68494374)
+texture = ExtResource("2_e00ml")
+
 [node name="Label4" type="Label" parent="."]
 layout_mode = 0
-offset_left = 183.0
-offset_top = 311.0
-offset_right = 362.0
-offset_bottom = 394.0
+offset_left = 186.0
+offset_top = 448.0
+offset_right = 825.0
+offset_bottom = 531.0
 theme_override_font_sizes/font_size = 60
 text = "???"
 
-[node name="Achievement4" type="Sprite2D" parent="."]
-position = Vector2(102.00001, 555)
-scale = Vector2(0.5999999, 0.609887)
-texture = ExtResource("2_e00ml")
-
 [node name="Achievement3" type="Sprite2D" parent="."]
-position = Vector2(99, 382.00003)
-scale = Vector2(0.58161247, 0.598939)
+position = Vector2(85.99999, 353.00003)
+scale = Vector2(0.66580623, 0.6694694)
 texture = ExtResource("2_e00ml")
 
 [node name="Achievement" type="Sprite2D" parent="."]
-position = Vector2(96.00001, 209)
-scale = Vector2(0.635, 0.65250003)
+position = Vector2(87, 188)
+scale = Vector2(0.68250006, 0.68125004)
 texture = ExtResource("2_e00ml")
 
 [node name="Achievement1" type="Sprite2D" parent="."]
-position = Vector2(96.375, 208.3125)
-scale = Vector2(0.63625, 0.666875)
+position = Vector2(86.00001, 187)
+scale = Vector2(0.68499976, 0.69)
 texture = ExtResource("3_bnact")
 
 [node name="Label3" type="Label" parent="."]
 layout_mode = 0
-offset_left = 183.0
-offset_top = 403.0
-offset_right = 1039.0
-offset_bottom = 464.0
+offset_left = 187.0
+offset_top = 386.0
+offset_right = 826.0
+offset_bottom = 426.0
 theme_override_font_sizes/font_size = 29
 text = "Unlock this when you rebirth once"
+
+[node name="Achievement2" type="Sprite2D" parent="."]
+position = Vector2(86.5, 352.25)
+scale = Vector2(0.68500006, 0.6874999)
+texture = ExtResource("4_u4g45")
+
+[node name="Achievement5" type="Sprite2D" parent="."]
+position = Vector2(89.00001, 520)
+scale = Vector2(0.69249994, 0.69499993)
+texture = ExtResource("5_h64ow")
 
 [node name="Label5" type="Label" parent="."]
 layout_mode = 0
 offset_left = 185.0
-offset_top = 480.0
-offset_right = 361.0
-offset_bottom = 563.0
+offset_top = 300.0
+offset_right = 824.0
+offset_bottom = 382.0
 theme_override_font_sizes/font_size = 59
 text = "???"
 
 [node name="Label6" type="Label" parent="."]
 layout_mode = 0
-offset_left = 185.0
-offset_top = 573.0
-offset_right = 1041.0
-offset_bottom = 634.0
+offset_left = 187.0
+offset_top = 540.0
+offset_right = 826.0
+offset_bottom = 580.0
 theme_override_font_sizes/font_size = 29
 text = "Unlock this when you rebirth twice"
-
-[node name="Achievement2" type="Sprite2D" parent="."]
-position = Vector2(98, 382.1875)
-scale = Vector2(0.64, 0.69812495)
-texture = ExtResource("4_u4g45")
-
-[node name="Achievement5" type="Sprite2D" parent="."]
-position = Vector2(100.5625, 551.75)
-scale = Vector2(0.63437504, 0.65250003)
-texture = ExtResource("5_h64ow")

@@ -1,0 +1,68 @@
+[gd_scene load_steps=2 format=3 uid="uid://cv0ajf6w6v55n"]
+
+[ext_resource type="Script" uid="uid://f82jsx0hkt8h" path="res://chips.gd" id="1_7h553"]
+
+[node name="Chips" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7h553")
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = -2.0
+offset_right = 194.00002
+offset_bottom = 82.0
+theme_override_font_sizes/font_size = 36
+text = "Go Back"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 248.0
+offset_top = 177.0
+offset_right = 930.0
+offset_bottom = 257.0
+theme_override_font_sizes/font_size = 36
+text = "How much chips would you like to buy?"
+vertical_alignment = 1
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 199.0
+offset_top = 332.0
+offset_right = 431.0
+offset_bottom = 435.0
+theme_override_font_sizes/font_size = 36
+text = "Buy 10 Chips"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 470.0
+offset_top = 337.0
+offset_right = 688.0
+offset_bottom = 434.0
+theme_override_font_sizes/font_size = 36
+text = "Buy 30 Chips"
+
+[node name="Button4" type="Button" parent="."]
+layout_mode = 0
+offset_left = 758.0
+offset_top = 343.0
+offset_right = 982.0
+offset_bottom = 440.0
+theme_override_font_sizes/font_size = 36
+text = "Buy 50 Chips"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 747.0
+offset_top = 3.0
+offset_right = 1164.0
+offset_bottom = 101.0
+theme_override_font_sizes/font_size = 56
+text = "Clicked: "
+vertical_alignment = 1

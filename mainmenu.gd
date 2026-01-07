@@ -14,7 +14,6 @@ func _ready() -> void:
 	if save == OK:
 		if !config.has_section("player") || !config.has_section_key("player", "newplayer") || !config.has_section_key("player", "fullscreen"):
 			config.set_value("player", "newplayer", true)
-			config.set_value("player", "fullscreen", false)
 		newplayer = config.get_value("player", "newplayer")
 		fullscreen = config.get_value("player", "fullscreen")
 		
@@ -38,16 +37,12 @@ func _ready() -> void:
 		config.set_value("player", "profitloss", 0)
 		config.set_value("player", "stockearned", 0)
 		config.set_value("player", "stocklost", 0)
+		config.set_value("player", "chips", 0)
 		config.set_value("player", "casinoearned", 0)
 		config.set_value("player", "casinolost", 0)
 		config.set_value("player", "1000achievement", false)
 		config.set_value("player", "onetime", false)
 		config.save("user://clicker.cfg")
-		
-	if fullscreen == true:
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
-	else:
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 	
 func _exitgame():
 	get_tree().quit()

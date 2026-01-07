@@ -21,7 +21,6 @@ func _reset():
 	config.set_value("player", "totalspent", 0)
 	config.set_value("player", "rebirth", 0)
 	config.set_value("player", "complete", 0)
-	config.set_value("player", "fullscreen", false)
 	config.set_value("player", "sold", 0)
 	config.set_value("player", "stock", 0)
 	config.set_value("player", "stockamount", 0)
@@ -33,17 +32,8 @@ func _reset():
 	config.set_value("player", "stocklost", 0)
 	config.set_value("player", "casinoearned", 0)
 	config.set_value("player", "casinolost", 0)
+	config.set_value("player", "chips", 0)
 	config.set_value("player", "1000achievement", false)
 	config.set_value("player", "onetime", false)
 	config.save("user://clicker.cfg")
 	get_tree().change_scene_to_file("res://mainmenu.tscn")
-
-
-func _on_check_box_toggled(toggled_on: bool) -> void:
-	if (toggled_on):
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
-		config.set_value("player", "fullscreen", true)
-	else:
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
-		config.set_value("player", "fullscreen", false)
-	config.save("user://clicker.cfg")

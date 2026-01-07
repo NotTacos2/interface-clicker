@@ -11,9 +11,11 @@ config_version=5
 [application]
 
 config/name="InterfaceClickerUrban"
+config/description="A tycoon game that allows you to build your own city through clicks."
+config/version="0.1"
 run/main_scene="uid://3wcrd45apwj"
 config/features=PackedStringArray("4.5", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://bhst7fet0o04s"
 
 [display]
 

@@ -24,12 +24,12 @@ vertical_alignment = 1
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 440.0
-offset_top = 361.0
+offset_left = 418.0
+offset_top = 363.0
 offset_right = 703.0
-offset_bottom = 468.0
+offset_bottom = 470.0
 theme_override_font_sizes/font_size = 48
-text = "Flip"
+text = "Flip (5 Chips)"
 
 [node name="Button2" type="Button" parent="."]
 layout_mode = 0
@@ -39,3 +39,12 @@ offset_right = 191.0
 offset_bottom = 85.0
 theme_override_font_sizes/font_size = 36
 text = "Go Back"
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 954.0
+offset_top = 2.0
+offset_right = 1154.0
+offset_bottom = 88.0
+theme_override_font_sizes/font_size = 36
+text = "Buy Chips"

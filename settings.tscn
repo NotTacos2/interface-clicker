@@ -27,14 +27,3 @@ offset_right = 192.0
 offset_bottom = 86.0
 theme_override_font_sizes/font_size = 36
 text = "Go Back"
-
-[node name="CheckBox" type="CheckBox" parent="."]
-layout_mode = 0
-offset_left = 464.0
-offset_top = 291.0
-offset_right = 765.0
-offset_bottom = 368.0
-theme_override_font_sizes/font_size = 43
-text = "  Fullscreen?"
-
-[connection signal="toggled" from="CheckBox" to="." method="_on_check_box_toggled"]

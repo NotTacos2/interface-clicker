@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cwu8s22ug5ugt"]
+[gd_scene load_steps=7 format=3 uid="uid://cwu8s22ug5ugt"]
 
 [ext_resource type="Script" uid="uid://b63jdxmgffjlo" path="res://cities.gd" id="1_q6ia6"]
 [ext_resource type="Texture2D" uid="uid://16ryr1n1bmox" path="res://city.png" id="2_37aek"]
 [ext_resource type="Texture2D" uid="uid://wxja38d5is1k" path="res://sky.png" id="3_amjoe"]
 [ext_resource type="Texture2D" uid="uid://bfskx4e78cuwb" path="res://cityroad.png" id="4_21cra"]
 [ext_resource type="Texture2D" uid="uid://briyewgi5k42c" path="res://stock.png" id="5_63qm5"]
+[ext_resource type="Texture2D" uid="uid://ivfcj84td1t3" path="res://casinobuilding.png" id="6_48xfc"]
 
 [node name="Cities" type="Control"]
 layout_mode = 3
@@ -92,9 +93,14 @@ text = "Manage Stocks"
 
 [node name="Button4" type="Button" parent="."]
 layout_mode = 0
-offset_left = 898.0
-offset_top = 296.0
-offset_right = 1079.0
-offset_bottom = 345.0
+offset_left = 895.0
+offset_top = 259.0
+offset_right = 1076.0
+offset_bottom = 308.0
 theme_override_font_sizes/font_size = 26
 text = "Casino"
+
+[node name="Casinobuilding" type="Sprite2D" parent="."]
+position = Vector2(975, 438.3125)
+scale = Vector2(0.33933643, 0.34493008)
+texture = ExtResource("6_48xfc")
